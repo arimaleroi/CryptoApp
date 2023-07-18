@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  coinmarketcap:
+    image: ${DOCKER_REGISTRY-}coinmarketcap
+    build:
+      context: .
+      dockerfile: CoinMarketCap/Dockerfile
+
+  client: 
+    image: client
+    build:
+      context: ./coinmarketcap-web
+      dockerfile: Dockerfile
+
+  proxy:
+    image: nginx:mainline
