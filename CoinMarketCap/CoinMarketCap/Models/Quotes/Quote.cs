@@ -1,4 +1,4 @@
-﻿namespace CoinMarketCap.Models
+﻿namespace CoinMarketCap.Models.Quotes
 {
     public class Quote
     {

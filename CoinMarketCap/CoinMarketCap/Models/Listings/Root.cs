@@ -1,4 +1,4 @@
-﻿namespace CoinMarketCap.Models
+﻿namespace CoinMarketCap.Models.Listings
 {
     public class Root
     {

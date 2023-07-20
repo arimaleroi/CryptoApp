@@ -20,10 +20,18 @@ namespace CoinMarketCap.Controllers
             _coinService = coinService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetCoinInfo()
+        [HttpGet("latestinfo")]
+        public async Task<IActionResult> GetLatestInfo()
         {
             var result = await _coinService.GetLatestInfo();
+
+            return Ok(result);
+        }
+
+        [HttpGet("getcoin/{coinId}")]
+        public async Task<IActionResult> GetCoin(int coinId)
+        {
+            var result = await _coinService.GetCoin(coinId);
 
             return Ok(result);
         }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 
 class App extends Component {
   constructor() {
@@ -15,7 +17,7 @@ class App extends Component {
   getData = async () => {
     try {
       const response = await fetch(
-        'https://localhost:44330/api/coincontroller',
+        'https://localhost:44330/api/coincontroller/latestinfo',
         {
           method: 'get'
         }
@@ -41,13 +43,13 @@ class App extends Component {
 
     const dataList = data.map((item, index) => (
       <li key={index}>
-        <p>{item.name} {item.symbol} {''}
+        <p><Link to={`/coin/${item.id}`}>{item.name} {item.symbol} {''}
         {' $'}{item.quote.usd.price.toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
         {' '}{item.quote.usd.percent_change_1h.toFixed(2)}{'%'}
         {' '}{item.quote.usd.percent_change_24h.toFixed(2)}{'%'}
         {' '}{item.quote.usd.percent_change_7d.toFixed(2)}{'%'}
         {' $'}{Math.floor(item.circulating_supply * item.quote.usd.price).toLocaleString('en', { useGrouping: true })} 
-        </p>
+        </Link></p>
       </li>
     ));
 
