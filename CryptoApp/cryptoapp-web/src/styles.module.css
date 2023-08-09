@@ -1,0 +1,8 @@
+.customTableCell {
+    background-color: lightblue;
+    color: darkblue;
+  }
+
+.customTableCell .drugoe {
+    color: red;
+}

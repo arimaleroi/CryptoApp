@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  cryptoapp:
+    image: ${DOCKER_REGISTRY-}cryptoapp
+    build:
+      context: .
+      dockerfile: CryptoApp/Dockerfile
+
+  client: 
+    image: client
+    build:
+      context: ./cryptoapp-web
+      dockerfile: Dockerfile
+
+  proxy:
+    image: nginx:mainline

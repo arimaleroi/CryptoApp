@@ -1,0 +1,48 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.search-container-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  text-align: center;
+  max-width: 250px;
+  font-weight: 600;
+  font-size: 12px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: visible;
+  padding: 8px;
+  background-color: var(--c-color-gray-200);
+  color: var(--c-color-gray-400);
+  border-radius: var(--c-border-radius-100);
+  border-radius: 20px; 
+  border: 1px solid #ccc; 
+  outline: none; 
+  transition: background-color 0.3s ease;
+}
+
+.search-container:hover {
+  background-color: #e8e8e8;
+}
+.search-container:focus {
+  background-color: #f8f8f8;
+}
+
+
+
