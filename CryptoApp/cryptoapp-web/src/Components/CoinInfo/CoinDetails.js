@@ -1,53 +1,130 @@
 import React from "react";
 import { DownIcon, UpIcon } from "../Icons";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import ListItemText from "@mui/material/ListItemText";
+import Avatar from "@mui/material/Avatar";
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 
 const CoinDetails = ({ coinData }) => {
   return (
     <div className="coin-details">
       <div className="detail-item">
-        <div className="detail-label">Rank</div>
-        <div className="detail-value">{coinData.market_cap_rank}</div>
+        <div className="detail-rank">Rank #{coinData.market_cap_rank}</div>
       </div>
-      <div className="detail-item">
-        <div className="detail-label">Price</div>
-        <div className="detail-value">
+      <div className="price-with-24h">
+        <img
+          src={coinData.image.small}
+          alt="Coin Logo"
+          className="detail-logo"
+        />
+        <div className="detail-name">{coinData.name}</div>
+        <div className="detail-symbol">{coinData.symbol.toUpperCase()}</div>
+      </div>
+      <div className="price-with-24h">
+        <div className="detail-price">
           $
           {coinData.market_data.current_price.usd.toLocaleString("en", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })}
         </div>
+        <div className="coin-24h">
+          <span
+            style={{
+              color:
+                coinData.market_data.price_change_percentage_24h.toFixed(1) < 0
+                  ? "red"
+                  : "green",
+            }}
+          >
+            {coinData.market_data.price_change_percentage_24h < 0 ? (
+              <DownIcon />
+            ) : (
+              <UpIcon />
+            )}
+            {coinData.market_data.price_change_percentage_24h.toFixed(1)}%
+          </span>
+        </div>
       </div>
-      <div className="coin-24h">
-        <span
-          style={{
-            color:
-              coinData.market_data.price_change_percentage_24h.toFixed(1) < 0
-                ? "red"
-                : "green",
+
+      <List
+        sx={{
+          width: "100%",
+          maxWidth: 360,
+          bgcolor: "background.paper",
+        }}
+      >
+        <ListItem
+          sx={{
+            pl: 0,
           }}
         >
-          {coinData.market_data.price_change_percentage_24h < 0 ? (
-            <DownIcon />
-          ) : (
-            <UpIcon />
-          )}
-          {coinData.market_data.price_change_percentage_24h.toFixed(1)}%
-        </span>
-      </div>
-      <div className="detail-item">
-        <div className="detail-label">Volume 24h</div>
-        <div className="detail-value">
-          ${coinData.market_data.total_volume.usd.toLocaleString("en")}
-        </div>
-      </div>
-      <div className="detail-item">
-        <div className="detail-label">Market Cap</div>
-        <div className="detail-value">
-          ${coinData.market_data.market_cap.usd.toLocaleString("en")}
-        </div>
-        {/* ... остальной код деталей монеты ... */}
-      </div>
+          <ListItemText
+            primary=<span style={{ fontWeight: "bold" }}>
+              {`$${coinData.market_data.market_cap.usd.toLocaleString("en")}`}
+            </span>
+            secondary="Market Cap"
+          />
+        </ListItem>
+        <Divider component="li" />
+        <li>
+          <Typography
+            sx={{ mt: 0.5, ml: 2 }}
+            color="text.secondary"
+            display="block"
+            variant="caption"
+          ></Typography>
+        </li>
+        <ListItem
+          sx={{
+            pl: 0,
+          }}
+        >
+          <ListItemText
+            primary=<span style={{ fontWeight: "bold" }}>
+              {`$${coinData.market_data.total_volume.usd.toLocaleString("en")}`}
+            </span>
+            secondary="24 Hour Trading Vol"
+          />
+        </ListItem>
+        <Divider component="li" />
+        <li>
+          <Typography
+            sx={{ mt: 0.5, ml: 2 }}
+            color="text.secondary"
+            display="block"
+            variant="caption"
+          ></Typography>
+        </li>
+
+        <ListItem
+          sx={{
+            pl: 0,
+          }}
+        >
+          <ListItemText
+            primary=<span style={{ fontWeight: "bold" }}>
+              {`$${coinData.market_data.circulating_supply.toLocaleString(
+                "en"
+              )}`}
+            </span>
+            secondary="Circulating Supply"
+          />
+        </ListItem>
+        <Divider component="li" />
+        <li>
+          <Typography
+            sx={{ mt: 0.5, ml: 2 }}
+            color="text.secondary"
+            display="block"
+            variant="caption"
+          ></Typography>
+        </li>
+      </List>
     </div>
   );
 };

@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import "chart.js/auto";
 import CoinChart from "../Components/CoinInfo/CoinChart";
 import CoinDetails from "../Components/CoinInfo/CoinDetails";
-import CoinHeader from "../Components/CoinInfo/CoinHeader";
 import TabContent from "../Components/CoinInfo/TabContent";
 import TimeRangeSelector from "../Components/CoinInfo/TimeRangeSelector";
 import "../Components/Styles/CoinInfo.css";
+import ResponsiveAppBar from "../Components/App/ResponsiveAppBar";
+import CoinFooter from "../Components/CoinInfo/CoinFooter";
 
 const CoinInfo = () => {
   const { id } = useParams();
@@ -37,8 +38,8 @@ const CoinInfo = () => {
     }
   };
 
-  const handleTimeRangeChange = (event) => {
-    setTimeRange(event.target.value);
+  const handleTimeRangeChange = (newTimeRange) => {
+    setTimeRange(newTimeRange);
   };
 
   if (!coinData) {
@@ -46,21 +47,32 @@ const CoinInfo = () => {
   }
 
   return (
-    <div className="container">
-      <CoinHeader coinData={coinData} />
-      <CoinDetails coinData={coinData} />
-      <div className="time-range-selector">
-        <TimeRangeSelector
-          timeRange={timeRange}
-          handleTimeRangeChange={handleTimeRangeChange}
-        />
+    <div>
+      <ResponsiveAppBar />
+      <div className="grid">
+        <div className="page-leftbar">
+          <div className="content">
+            <CoinDetails coinData={coinData} />
+          </div>
+        </div>
+        <div className="page-main">
+          <div className="coin-chart">
+            <CoinChart coinId={id} timeRange={timeRange} />
+          </div>
+          <div className="time-range-selector">
+            <TimeRangeSelector
+              timeRange={timeRange}
+              onTimeRangeChange={handleTimeRangeChange}
+            />
+          </div>
+        </div>
+        <div className="page-footer">
+          <div className="tabs">
+            <TabContent coinData={coinData} />
+          </div>
+        </div>
       </div>
-      <div className="coin-chart">
-        <CoinChart coinId={id} timeRange={timeRange} />
-      </div>
-      <div className="tabs">
-        <TabContent coinData={coinData} />
-      </div>
+      <CoinFooter />
     </div>
   );
 };

@@ -1,0 +1,113 @@
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 70px minmax(160px, auto) auto;
+    grid-template-areas: 
+      'header header'
+      'leftbar main'
+      'footer footer';
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 80%; 
+    margin: 0 auto; 
+  }
+  
+  .page-header {
+    grid-area: header;
+  }
+  
+  .page-leftbar {
+    grid-area: leftbar;
+  }
+  
+  .page-main {
+    grid-area: main;
+  }
+  
+  .page-footer {
+    grid-area: footer;
+  }
+  
+  .content {
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+  }
+
+body {
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.coin-details {
+box-sizing: border-box;
+}
+
+
+
+.detail-rank {
+    font-size: 16px;
+    display: inline-flex;
+    background-color: #1976d2;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.detail-price {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.price-with-24h {
+    display: flex;
+    align-items: center;
+    vertical-align: middle
+}
+
+.coin-24h {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.detail-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.detail-symbol {
+  color: gray;
+  font-size: 16px;
+  height: 16px;
+  width: auto;
+}
+
+.detail-logo {
+  margin-right: 5px;
+  width: auto;
+  height: 36px;
+}
+
+.coin-details {
+  padding-left: 5%;
+}
+
+.overview {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 2;
+  white-space: pre-line;
+  word-break: break-word;
+  position: relative;
+}
+
+.tab-panel-content {
+  margin-left: 10px;
+}
+
