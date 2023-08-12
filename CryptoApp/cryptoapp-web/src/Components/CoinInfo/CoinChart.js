@@ -67,10 +67,10 @@ const CoinChart = ({ coinId, timeRange }) => {
 
   const chartContainerStyles = {
     display: "flex",
-    justifyContent: "center", // Center horizontally
-    alignItems: "center", // Center vertically
+    justifyContent: "center",
+    alignItems: "center",
     boxSizing: "border-box",
-    width: "1000px", // Use a percentage width to make it responsive
+    width: "1000px",
     height: "400px",
   };
 

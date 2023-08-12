@@ -26,10 +26,10 @@ function App() {
         const data = await response.json();
         setData(data);
       } else {
-        console.error("Ошибка при получении данных");
+        console.error("Error while fetching data");
       }
     } catch (error) {
-      console.error("Ошибка при получении данных", error);
+      console.error("Error while fetching data", error);
     }
   };
 

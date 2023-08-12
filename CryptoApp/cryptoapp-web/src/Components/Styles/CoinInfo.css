@@ -111,3 +111,14 @@ box-sizing: border-box;
   margin-left: 10px;
 }
 
+.social-media {
+  font-weight: bold;
+}
+
+.social-media a {
+  margin-right: 20px;
+}
+
+
+
+

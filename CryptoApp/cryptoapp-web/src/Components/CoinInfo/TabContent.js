@@ -60,7 +60,10 @@ export default function CustomizedTabs({ coinData }) {
         <Tab label="Social Media" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <OverviewComponent description={coinData.description.en} />
+        <OverviewComponent
+          coinName={coinData.name}
+          description={coinData.description.en}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <ExchangesComponent tickers={coinData.tickers} />
