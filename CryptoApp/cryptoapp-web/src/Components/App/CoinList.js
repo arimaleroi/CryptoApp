@@ -13,11 +13,12 @@ import {
 import "../Styles/CoinList.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import { formatNumber } from "../CoinInfo/FormatNumber";
 
 const theme = createTheme({
   typography: {
     fontFamily: ["Segoe UI", "sans-serif"],
-    fontSize: "15",
+    fontSize: 15,
   },
 });
 
@@ -30,9 +31,7 @@ const CoinList = ({ dataList }) => {
           <Table
             aria-label="table with sticky header"
             stickyHeader
-            stickyFooter
             stripe="odd"
-            hoverRow
           >
             <TableHead>
               <TableRow>
@@ -81,13 +80,7 @@ const CoinList = ({ dataList }) => {
                       </div>
                     </Link>
                   </TableCell>
-                  <TableCell>
-                    $
-                    {item.currentPrice.toLocaleString("en", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </TableCell>
+                  <TableCell>${formatNumber(item.currentPrice)}</TableCell>
                   <TableCell>
                     <span
                       style={{

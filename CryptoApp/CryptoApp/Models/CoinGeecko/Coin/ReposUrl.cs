@@ -2,7 +2,7 @@
 {
     public class ReposUrl
     {
-        public List<string> github { get; set; }
-        public List<object> bitbucket { get; set; }
+        public List<string>? github { get; set; }
+        public List<object>? bitbucket { get; set; }
     }
 }

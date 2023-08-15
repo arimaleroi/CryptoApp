@@ -10,6 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\CoinGeecko\Coin\CodeAdditionsDeletions4Weeks.cs" />
+    <Compile Remove="Models\CoinGeecko\Coin\CommunityData.cs" />
+    <Compile Remove="Models\CoinGeecko\Coin\DetailPlatforms.cs" />
+    <Compile Remove="Models\CoinGeecko\Coin\DeveloperData.cs" />
+    <Compile Remove="Models\CoinGeecko\Coin\Platforms.cs" />
+    <Compile Remove="Models\CoinGeecko\Coin\PublicInterestStats.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />

@@ -1,15 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "./Pages/App";
 import CoinInfo from "./Pages/CoinInfo";
 
-ReactDOM.render(
+const root = document.getElementById("root");
+const rootComponent = (
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/coin/:id" element={<CoinInfo />} />
     </Routes>
-  </Router>,
-  document.getElementById("root")
+  </Router>
 );
+
+createRoot(root).render(rootComponent);

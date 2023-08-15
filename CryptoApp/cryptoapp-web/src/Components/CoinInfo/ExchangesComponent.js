@@ -37,7 +37,7 @@ const ExchangesComponent = ({ tickers }) => {
                   {ticker.market.name}
                 </a>
               </TableCell>
-              <TableCell>
+              <TableCell className="table-cell">
                 <a
                   href={ticker.trade_url}
                   target="_blank"
@@ -55,7 +55,9 @@ const ExchangesComponent = ({ tickers }) => {
                 })}
               </TableCell>
               <TableCell>
-                {ticker.bid_ask_spread_percentage.toFixed(2)}%
+                {ticker.bid_ask_spread_percentage !== null
+                  ? ticker.bid_ask_spread_percentage.toFixed(2) + "%"
+                  : "N/A"}
               </TableCell>
               <TableCell align="right">
                 $

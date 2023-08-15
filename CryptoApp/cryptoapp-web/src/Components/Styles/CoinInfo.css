@@ -119,6 +119,11 @@ box-sizing: border-box;
   margin-right: 20px;
 }
 
-
+.table-cell {
+  max-width: 150px; /* Максимальная ширина ячейки */
+  white-space: nowrap; /* Запрет переноса текста */
+  overflow: hidden; /* Обрезание лишнего текста */
+  text-overflow: ellipsis; /* Добавление многоточия в конце обрезанного текста */
+}
 
 

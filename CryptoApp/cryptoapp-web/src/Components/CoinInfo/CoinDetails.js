@@ -5,6 +5,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
+import { formatNumber } from "./FormatNumber";
 
 const CoinDetails = ({ coinData }) => {
   return (
@@ -23,11 +24,7 @@ const CoinDetails = ({ coinData }) => {
       </div>
       <div className="price-with-24h">
         <div className="detail-price">
-          $
-          {coinData.market_data.current_price.usd.toLocaleString("en", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })}
+          ${formatNumber(coinData.market_data.current_price.usd)}
         </div>
         <div className="coin-24h">
           <span

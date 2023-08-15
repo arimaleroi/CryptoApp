@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
+import { formatNumber } from "./FormatNumber";
 
 const CoinChart = ({ coinId, timeRange }) => {
   const [chartData, setChartData] = useState(null);
@@ -59,7 +60,7 @@ const CoinChart = ({ coinId, timeRange }) => {
       y: {
         beginAtZero: false,
         ticks: {
-          callback: (value) => "$" + value,
+          callback: (value) => "$" + formatNumber(parseFloat(value)),
         },
       },
     },

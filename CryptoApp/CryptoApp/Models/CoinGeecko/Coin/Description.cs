@@ -2,6 +2,6 @@
 {
     public class Description
     {
-        public string en { get; set; }
+        public string? en { get; set; }
     }
 }
