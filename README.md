@@ -1,7 +1,10 @@
 
-# **CryptoApp**
+# **CryptoApp** ![](https://github.com/arimaleroi/CryptoApp/blob/main/CryptoApp/cryptoapp-web/src/Logo.svg)
 
 **CryptoApp is a website that provides information such as prices, trade volumes, market capitalization on cryptocurrencies.**
+
+
+
 
 
 
@@ -11,11 +14,11 @@ Install project with Docker in the root CryptoApp folder.
 
 For example, if the client part is located in
 
-`D:\CryptoApp\CryptoApp\cryptoapp-web folder`
+`D:\CryptoApp\CryptoApp\cryptoapp-web` folder
 
 then the commands should be entered in:
 
-`D:\CryptoApp\CryptoApp\ folder`
+`D:\CryptoApp\CryptoApp\` folder
 
 
 ```bash
@@ -91,6 +94,17 @@ When you hover over a point on the chart, it shows the price and the exact date
 
 Shows the description of the coin, exchanges that have trading pairs with this coin and social networks for this coin.
 
+
+
+
+
+
+
+
+
+
+
+
 ## Technologies
 
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
@@ -98,6 +112,10 @@ Shows the description of the coin, exchanges that have trading pairs with this c
 ![](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white) ![](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white) 
 ![](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+
+
+
+
 
 
 ## Project plans
