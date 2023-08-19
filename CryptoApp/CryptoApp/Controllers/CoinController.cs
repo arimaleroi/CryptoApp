@@ -10,7 +10,7 @@ namespace CryptoApp.Controllers
 {
     [ApiController]
 
-    [Route("api/coincontroller")]
+    [Route("api/[controller]")]
     public class CoinController : ControllerBase
     {
         private readonly ICoinService _coinService;

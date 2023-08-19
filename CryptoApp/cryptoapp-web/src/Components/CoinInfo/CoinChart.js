@@ -10,7 +10,7 @@ const CoinChart = ({ coinId, timeRange }) => {
     const fetchChartData = async (coinId, days) => {
       try {
         const response = await fetch(
-          `https://localhost:44330/api/coincontroller/marketchart?id=${coinId}&days=${days}`
+          `http://localhost:5555/api/Coin/marketchart?id=${coinId}&days=${days}`
         );
         if (!response.ok) {
           throw new Error("Ошибка при получении данных с API");

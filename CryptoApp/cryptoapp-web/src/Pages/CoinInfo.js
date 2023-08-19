@@ -21,7 +21,7 @@ const CoinInfo = () => {
   const getData = async (coinId) => {
     try {
       const response = await fetch(
-        `https://localhost:44330/api/coincontroller/coin?id=${coinId}`,
+        `http://localhost:5555/api/Coin/coin?id=${coinId}`,
         {
           method: "get",
         }

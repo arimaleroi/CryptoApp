@@ -15,12 +15,9 @@ function App() {
 
   const getData = async () => {
     try {
-      const response = await fetch(
-        "https://localhost:44330/api/coincontroller/markets",
-        {
-          method: "get",
-        }
-      );
+      const response = await fetch("http://localhost:5555/api/Coin/markets", {
+        method: "get",
+      });
 
       if (response.ok) {
         const data = await response.json();

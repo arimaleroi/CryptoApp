@@ -21,7 +21,7 @@ namespace CryptoApp
 
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000");
+                    builder.WithOrigins("http://localhost:3000", "http://localhost:5555", "http://localhost:3333");
                 }));
 
             var app = builder.Build();
@@ -30,10 +30,12 @@ namespace CryptoApp
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                });
             }
 
-            app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
