@@ -1,5 +1,5 @@
 
-# **CryptoApp** ![](https://github.com/arimaleroi/CryptoApp/blob/main/CryptoApp/cryptoapp-web/src/Logo.svg)
+# **CryptoApp** :tw-1f4ca:
 
 **CryptoApp is a website that provides information such as prices, trade volumes, market capitalization on cryptocurrencies.**
 
