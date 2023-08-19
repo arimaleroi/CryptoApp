@@ -1,5 +1,5 @@
 
-# **CryptoApp** :tw-1f4ca:
+# **CryptoApp** :bar_chart:
 
 **CryptoApp is a website that provides information such as prices, trade volumes, market capitalization on cryptocurrencies.**
 
